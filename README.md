@@ -99,3 +99,21 @@ This runs tests and coverage for Python 3.8 and Flake8, Bandit.
 # TODO
 - [X] Change make to invoke: invoke is overrated
 - [ ] Add endpoint for uploading text file and questions
+
+
+```js
+// running this from node 
+let url = 'http://localhost:8000/api/v1/question';
+let data = {context: 'this is an example context', question:'what is the context?'};
+
+fetch(url, {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+    'token':'example_key'
+  },
+  body: JSON.stringify(data),
+}).then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => console.error('Error:', error));
+```
